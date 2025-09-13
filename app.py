@@ -2,7 +2,7 @@ import streamlit as st
 import requests
 from lxml import etree
 
-st.set_page_config(page_icon="🧬",page_title="RchFind", layout="wide")
+st.set_page_config(page_icon="🧬", page_title="RchFind", layout="wide")
 
 def fetch_pubmed_links(compound, keywords=None, num_papers=10):
     query_parts = [compound]
@@ -45,13 +45,19 @@ if submitted:
             with cols[i % 3]:
                 st.markdown(
                     f"""
-                    <div style="padding:15px; border-radius:12px; box-shadow:0px 4px 8px rgba(0,0,0,0.1); margin-bottom:20px; background-color:#f9f9f9;">
-                        <h4 style="font-size:16px;">{paper['title']}</h4>
-                        <a href="{paper['link']}" target="_blank">🔗 Read Paper</a>
+                    <div style="
+                        padding:15px;
+                        border-radius:12px;
+                        box-shadow:0px 4px 8px rgba(0,0,0,0.1);
+                        margin-bottom:20px;
+                        background-color:#f9f9f9;
+                        color:#000000;  /* ensures text is visible in dark mode */
+                    ">
+                        <h4 style="font-size:16px; color:#000000;">{paper['title']}</h4>
+                        <a href="{paper['link']}" target="_blank" style="color:#1a0dab; text-decoration:none;">🔗 Read Paper</a>
                     </div>
                     """,
                     unsafe_allow_html=True
                 )
     else:
         st.warning("No results found. Try different keywords.")
-
