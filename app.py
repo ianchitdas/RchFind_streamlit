@@ -4,7 +4,6 @@ from lxml import etree
 
 st.set_page_config(page_icon="🧬",page_title="RchFind", layout="wide")
 
-# Function to fetch papers (without bs4)
 def fetch_pubmed_links(compound, keywords=None, num_papers=10):
     query_parts = [compound]
     if keywords:
@@ -55,3 +54,4 @@ if submitted:
                 )
     else:
         st.warning("No results found. Try different keywords.")
+
