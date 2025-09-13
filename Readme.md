@@ -19,5 +19,5 @@ The results are displayed in a **card-based layout** for easy browsing.
 Clone this repository:
 
 ```bash
-git clone https://github.com/yourusername/rchfind.git
-cd rchfind
+git clone https://github.com/ianchitdas/RchFind_streamlit.git
+cd RchFind
